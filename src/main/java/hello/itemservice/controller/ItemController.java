@@ -28,7 +28,9 @@ public class ItemController {
     }
 
     @GetMapping("/register")
-    public String registerForm() {
+    public String registerForm(Model model) {
+
+        model.addAttribute("item", new Item());
 
         return "/register";
     }

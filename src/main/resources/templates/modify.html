@@ -15,24 +15,22 @@
     <div class="py-5 text-center">
         <h2>상품 수정 폼</h2>
     </div>
-    <form th:action="@{/modify}" method="post">
+    <form th:action="@{/modify}" th:object="${item}" method="post">
         <div>
-            <label for="id">상품 ID</label>
-            <input type="text" id="id" name="id" class="form-control" value="1"
-                   th:value="${item.id}" readonly>
+            <label th:for="id">상품 ID</label>
+            <input type="text" th:field="*{id}" class="form-control" readonly>
         </div>
         <div>
-            <label for="name">상품명</label>
-            <input type="text" id="name" name="name" class="form-control" value="상품A" th:value="${item.name}">
+            <label th:for="name">상품명</label>
+            <input type="text" th:field="*{name}" class="form-control">
         </div>
         <div>
-            <label for="price">가격</label>
-            <input type="text" id="price" name="price" class="form-control"
-                   th:value="${item.price}">
+            <label th:for="price">가격</label>
+            <input type="text" th:field="*{price}" class="form-control">
         </div>
         <div>
-            <label for="quantity">수량</label>
-            <input type="text" id="quantity" name="quantity" class="form-control" th:value="${item.quantity}">
+            <label th:for="quantity">수량</label>
+            <input type="text" th:field="*{quantity}" class="form-control">
         </div>
         <hr class="my-4">
         <div class="row">
