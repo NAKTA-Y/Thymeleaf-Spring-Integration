@@ -2,6 +2,7 @@ package hello.itemservice.controller;
 
 import hello.itemservice.domain.item.Item;
 import hello.itemservice.repository.ItemRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +14,10 @@ import java.util.Map;
 
 @Controller
 @Slf4j
-public class ItemController {
+@RequiredArgsConstructor
+public class ItemController extends BaseModelAttribute{
 
-    ItemRepository itemRepository = ItemRepository.getInstance();
+    private final ItemRepository itemRepository;
 
     @GetMapping("/")
     public String itemList(Model model) {
