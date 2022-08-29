@@ -15,7 +15,7 @@ import java.util.Map;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-public class ItemController extends BaseModelAttribute{
+public class ItemController extends BaseModelAttribute {
 
     private final ItemRepository itemRepository;
 
